@@ -14,6 +14,10 @@ namespace Prueba1.Data
 
         public DbSet<User>? Users { get; set; }
         public DbSet<Course>? Courses { get; set; }
+        public DbSet<Chapter>? chapters { get; set; }
+        public DbSet<Category>? Categories { get; set; }
+        public DbSet<Student>? students { get; set; }
+       
 
     }
 }
