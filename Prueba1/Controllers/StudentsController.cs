@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Prueba1.Data;
 using Prueba1.Models.DataModels;
+using Prueba1.Services;
 
 namespace Prueba1.Controllers
 {
@@ -15,10 +16,12 @@ namespace Prueba1.Controllers
     public class StudentsController : ControllerBase
     {
         private readonly UniversityDBContext _context;
+        private readonly IStudentServices _StudentService;
 
-        public StudentsController(UniversityDBContext context)
+        public StudentsController(UniversityDBContext context, IStudentServices StudentService)
         {
             _context = context;
+            _StudentService = StudentService;
         }
 
         // GET: api/Students
