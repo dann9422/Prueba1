@@ -479,10 +479,10 @@ namespace LinqSnippets
             {
                 new Post()
                 {
-                    Id=1,
-                    Title ="My First Post",
+                    Id = 1,
+                    Title = "My First Post",
                     Content = "My First Content",
-                    Created =DateTime.Now,
+                    Created = DateTime.Now,
                     Comments = new List<Comment>()
                     {
                         new Comment()
@@ -492,7 +492,7 @@ namespace LinqSnippets
                             Content = "My First Content",
                             Created =DateTime.Now,
 
-                        },                   
+                        },
                         new Comment()
                         {
                             Id=2,
@@ -500,7 +500,7 @@ namespace LinqSnippets
                             Content = "My second Content",
                             Created =DateTime.Now,
 
-                        },                      
+                        },
                         new Comment()
                         {
                             Id=3,
@@ -510,7 +510,7 @@ namespace LinqSnippets
 
                         },
                     }
-                },
+                };
                                 new Post()
                                 {
                                     Id = 2,

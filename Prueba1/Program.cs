@@ -11,6 +11,13 @@ var connetionString = builder.Configuration.GetConnectionString(CONNECTIONNAME);
 
 //se crea el contexto y se genera el servicio para consumirlo 
 builder.Services.AddDbContext<UniversityDBContext>(options =>options.UseSqlServer(connetionString));
+
+
+//Jwt 
+
+//builder.Services.AddJwtTokenServices(builder.Configuration);
+
+
 builder.Services.AddControllers();
 
 // se agregan los servicios de cada modelo que se quiere trabajar 
