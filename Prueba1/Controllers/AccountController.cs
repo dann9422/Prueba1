@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Prueba1.Data;
 using Prueba1.Helpers;
 using Prueba1.Models.DataModels;
 
@@ -11,30 +12,32 @@ namespace Prueba1.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
+        private readonly UniversityDBContext _context;
 
         private readonly JwtSettings _jwtSetthings;
 
 
-        public AccountController(JwtSettings jwtSetthings)
+        public AccountController(UniversityDBContext context,JwtSettings jwtSetthings)
         {
+            _context = context;
             _jwtSetthings = jwtSetthings;
-
+            
         }
         private IEnumerable<User> Logins = new List<User>()
         {
             new User(){
             Id = 1,
             Email = "daniel@gmail.com",
-            Name = "daniel",
-            PassWord="daniel"
+            Name = "Admin",
+            PassWord="Admin"
 
             },
 
             new User(){
             Id = 2,
             Email = "juan@gmail.com",
-            Name = "juan",
-            PassWord="juan"
+            Name = "User 1",
+            PassWord="pepe"
 
             }
 

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prueba1", "Prueba1\Prueba1.csproj", "{588B5F5D-278F-4D1C-A81C-88C58D022866}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqSnippets", "LinqSnippets\LinqSnippets.csproj", "{9A0451C8-F82B-44BC-B334-CA4A2D1B94BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqSnippets", "LinqSnippets\LinqSnippets.csproj", "{9A0451C8-F82B-44BC-B334-CA4A2D1B94BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
