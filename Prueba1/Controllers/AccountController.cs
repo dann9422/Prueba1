@@ -49,17 +49,33 @@ namespace Prueba1.Controllers
             try
             {
                 var Token = new UserTokens();
-                var Valid = Logins.Any(User => User.Name.Equals(userLogin.UserName,StringComparison.OrdinalIgnoreCase));
 
-                if (Valid)
+
+
+                //Consulta desde la base de datos creados 
+                var searchUser = (from user in _context.Users
+                                 where user.Name == userLogin.UserName
+                                 && user.PassWord == userLogin.Password
+                                 select user).FirstOrDefault();
+
+
+                //Console.WriteLine("User found", searchUser);
+
+
+                //var Valid = Logins.Any(User => User.Name.Equals(userLogin.UserName,StringComparison.OrdinalIgnoreCase));
+
+                var valid = searchUser != null; 
+
+
+                if (searchUser != null)
                 {
-                    var user = Logins.FirstOrDefault(user => user.Name.Equals(userLogin.UserName));
+                    //var user = Logins.FirstOrDefault(user => user.Name.Equals(userLogin.UserName));
 
                     Token = JwtHelpers.GenTokenKey(new UserTokens()
                     {
-                        UserName = user.Name,
-                        EmailId = user.Email,
-                        Id = user.Id,
+                        UserName = searchUser.Name,
+                        EmailId = searchUser.Email,
+                        Id = searchUser.Id,
                         GuidId = Guid.NewGuid()
 
 
